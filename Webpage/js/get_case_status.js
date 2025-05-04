@@ -1,4 +1,4 @@
-fetch("https://api.odt.org.pl/publictransport/api/status/")
+fetch("https://api.odt.org.pl/publictransport/status/")
   .then((res) => {
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);

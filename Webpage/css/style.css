@@ -87,6 +87,11 @@ html, body {
   text-align: justify;
 }
 
+.tipped-widget {
+  width: 200px;
+  margin: 10px;
+}
+
 /* ===========================
    Table Section
 =========================== */

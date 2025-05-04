@@ -1,5 +1,5 @@
 function fetchPublicTransportDataByRegionId(id) {
-  fetch(`https://api.odt.org.pl/publictransport/api/data/region/${id}/`)
+  fetch(`https://api.odt.org.pl/publictransport/data/region/${id}/`)
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
