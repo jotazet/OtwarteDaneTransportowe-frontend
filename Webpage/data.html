@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Dane - Otwarte Dane Transportowe</title>
+    <meta name="description" content="Przeglądaj dane GTFS, GTFS-RT, NeTEx oraz SIRI od organizatorów transportu publicznego.">
+    <meta name="keywords" content="dane transportowe, odt, GTFS, GTFS-RT, NeTEx, SIRI, transport publiczny, otwarte dane transportowe">
+    <meta name="author" content="Jakub Zydroń">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/get_feed-status.js"></script>
+    <script src="js/get_publictransport_data.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Otwarte Dane Transportowe</h1>
+      <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Strona główna</a></li>
+          <li><a href="data.html" class="nav-link">Dane</a></li>
+          <li><a href="about.html" class="nav-link">Informacje</a></li>
+          <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <div class="intro">
+        <p>Na tej stronie znajdziesz szczegółowe informacje o statusie danych GTFS, GTFS-RT, NeTEx, SIRI oraz innych formatów od organizatorów transportu publicznego. Klikając na tabelę możesz pobrać dane.</p>
+      </div>
+      <section class="status-section">
+        <h2>Status danych transportu publicznego</h2>
+        <div class="table-wrapper">
+          <div class="table-container">
+            <table id="status-table" class="data-table">
+              <thead>
+                <tr>
+                  <th>Region</th>
+                  <th>Organizator transportu</th>
+                  <th>GTFS</th>
+                  <th>GTFS-RT</th>
+                  <th>NeTEx</th>
+                  <th>SIRI</th>
+                  <th>Other</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Rows will be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Popup container -->
+    <div id="popup" class="popup">
+        <h3>Dane do pobrania</h3>
+        <table id="public-transport-data-table" class="data-table">
+        <thead>
+            <tr>
+            <th>Region</th>
+            <th>Organizator transportu</th>
+            <th>Format danych</th>
+            <th>Link do danych</th>
+            <th>Plik</th>
+            <th>Data dodania</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be dynamically added here -->
+        </tbody>
+        </table>
+        <button id="close-popup" class="close-button" aria-label="Close">&times;</button>
+    </div>
+
+    <footer class="main-footer">
+      <pre>&copy; 2025 Jakub Zydroń. Wszelkie prawa zastrzeżone.</pre>
+      <pre>Licencja MIT</pre>
+    </footer>
+  </body>
+</html>

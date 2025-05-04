@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Otwarte Dane Transportowe</title>
+    <meta name="description" content="Witaj na stronie Otwarte Dane Transportowe! Sprawdzisz tutaj status pozyskiwania danych od organizatorów transportu publicznego. Znajdziesz również oficjalne dane GTFS oraz GTFS-RT od organizatorów transportu zbiorowego.">
+    <meta name="keywords" content="otwarte dane transportowe, dane transportowe, GTFS, GTFS-RT, transport publiczny, dane otwarte, ODT">
+    <meta name="author" content="Jakub Zydroń">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/get_case_status.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Otwarte Dane Transportowe</h1>
+      <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Strona główna</a></li>
+          <li><a href="data.html" class="nav-link">Dane</a></li>
+          <li><a href="about.html" class="nav-link">Informacje</a></li>
+          <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <div class="intro">
+        <p>Witaj na stronie Otwarte Dane Transportowe! Sprawdzisz tutaj status pozyskiwania danych od różnych dostawców. Głównym celem projektu jest gromadzenie oficjalnych danych GTFS oraz GTFS-RT od organizatorów transportu zbiorowego.</p>
+      </div>
+      <section class="status-section">
+        <h2>Status pozyskiwania danych od organizatorów transportu publicznego</h2>
+        <div class="table-wrapper">
+          <div class="table-container">
+            <table id="data-table" class="data-table">
+              <thead>
+                <tr>
+                  <th>Region</th>
+                  <th>Organizator transportu</th>
+                  <th>Status sprawy</th>
+                  <th>Strona internetowa</th>
+                  <th>Email kontaktowy</th>
+                  <th>Dostawy usług</th>
+                </tr>
+              </thead>
+              <tbody id="status-table">
+                <!-- Rows will be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <pre>&copy; 2025 Jakub Zydroń. Wszelkie prawa zastrzeżone.</pre>
+      <pre>Licencja MIT</pre>
+    </footer>
+  </body>
+</html>

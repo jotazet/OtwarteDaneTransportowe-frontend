@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Informacje - Otwarte Dane Transportowe</title>
+    <meta name="description" content="Dowiedz się więcej o inicjatywie Otwarte Dane Transportowe (ODT), która udostępnia oficjalne dane transportowe w Polsce. Skontaktuj się w sprawie współpracy lub zgłoś błąd.">
+    <meta name="keywords" content="otwarte dane transportowe, ODT, dane transportowe, GTFS, GTFS-RT, NeTEx, SIRI, transport publiczny">
+    <meta name="author" content="Jakub Zydroń">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Otwarte Dane Transportowe</h1>
+      <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Strona główna</a></li>
+          <li><a href="data.html" class="nav-link">Dane</a></li>
+          <li><a href="about.html" class="nav-link">Informacje</a></li>
+          <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <section class="intro">
+        <h2>Informacje o ODT</h2>
+        <p>
+          Otwarte Dane Transportowe (ODT) to inicjatywa mająca na celu udostępnienie oficjalnych danych związanych z transportem drogowym w Polsce.
+          Podstawa prawna, która umożliwia dostęp do danych to
+          <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20210001641" target="_blank">
+            ustawa z dnia 11 sierpnia 2021 r. o otwartych danych i ponownym wykorzystywaniu informacji sektora publicznego
+          </a>.
+          Projekt jest otwartoźródłowy i dostępny do pobrania na 
+          <a href="https://github.com/jotazet/OtwarteDaneTransportowe" target="_blank">GitHubie</a>.
+          Wszystkie dane wyświetlane na stronie w tabelach są pobierane z otwartego API. 
+        </p>
+        <h2>Format danych transportu publicznego</h2>
+        <p>
+          ODT gromadzi dane od dostawców w formacie GTFS (General Transit Feed Specification) oraz GTFS-RT (General Transit Feed Specification - Realtime).
+          Serwis przystosowany jest również do przechowywania danych w europejskich standardach NeTEx oraz SIRI.
+          Więcej na temat powyższych formatów znajdziesz na stronie <a href="https://gtfs.org" target="_blank">https://gtfs.org</a> oraz <a href="https://transmodel-cen.eu/" target="_blank">https://transmodel-cen.eu/</a>.
+        </p>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <pre>&copy; 2025 Jakub Zydroń. Wszelkie prawa zastrzeżone.</pre>
+      <pre>Licencja MIT</pre>
+    </footer>
+  </body>
+</html>
