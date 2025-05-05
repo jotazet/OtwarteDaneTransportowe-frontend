@@ -26,11 +26,11 @@ function fetchPublicTransportDataByRegionId(id) {
         // Update only the tbody of the table
         document.querySelector("#public-transport-data-table tbody").innerHTML = temp;
       } else {
-        document.querySelector("#public-transport-data-table tbody").innerHTML = "<tr><td colspan='6'>No data available</td></tr>";
+        document.querySelector("#public-transport-data-table tbody").innerHTML = "<tr><td colspan='6'>Brak dostępnych danych</td></tr>";
       }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
-      document.querySelector("#public-transport-data-table tbody").innerHTML = "<tr><td colspan='6'>Error loading data</td></tr>";
+      document.querySelector("#public-transport-data-table tbody").innerHTML = "<tr><td colspan='6'>Brak danych</td></tr>";
     });
 }
