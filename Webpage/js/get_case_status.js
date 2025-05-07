@@ -28,7 +28,7 @@ fetch("https://api.odt.org.pl/publictransport/status/")
             <td>${STATUS_TRANSLATIONS[item.case_status[item.case_status.length - 1]?.status] || "Brak danych"}</td>
             <td><a href="${item.website || "#"}" target="_blank">${item.website || "Brak danych"}</a></td>
             <td>${item.contact_email || "Brak danych"}</td>
-            <td>${item.data_providers[0]?.name || "Brak danych"}</td>
+            <td>${item.data_providers?.map(provider => provider.name).join(", ") || "Brak danych"}</td>
           </tr>
         `;
       });
