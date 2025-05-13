@@ -20,9 +20,9 @@ fetch("https://api.odt.org.pl/publictransport/status/")
         '8': '🤔 Inny',
       };
 
-      data.forEach((item) => {
+      data.forEach((item, index) => {
         temp += `
-          <tr>
+          <tr class="main-row" data-index="${index}">
             <td>${item.region || "Brak danych"}</td>
             <td>${item.transport_organization || "Brak danych"}</td>
             <td>${STATUS_TRANSLATIONS[item.case_status[item.case_status.length - 1]?.status] || "Brak danych"}</td>
@@ -30,10 +30,43 @@ fetch("https://api.odt.org.pl/publictransport/status/")
             <td>${item.contact_email || "Brak danych"}</td>
             <td>${item.data_providers?.map(provider => provider.name).join(", ") || "Brak danych"}</td>
           </tr>
+          <tr class="details-row" data-index="${index}" style="display: none;">
+            <td colspan="6">
+              <div class="timeline">
+                ${item.case_status
+                  .sort((a, b) => new Date(a.date) - new Date(b.date))
+                  .map(status => `
+                    <div class="timeline-event">
+                      <div class="event-date">${`${String(new Date(status.date).getDate()).padStart(2, '0')}.${String(new Date(status.date).getMonth() + 1).padStart(2, '0')}.${new Date(status.date).getFullYear()}`}</div>
+                      <div class="event-description">${STATUS_TRANSLATIONS[status.status] || "Brak danych"}</div>
+                    </div>
+                  `)
+                  .join("")}
+              </div>
+            </td>
+          </tr>
         `;
       });
 
-      document.getElementById("status-table").innerHTML = temp;
+      document.querySelector("tbody").innerHTML = temp;
+      document.addEventListener("click", (event) => {
+        const clickedRow = event.target.closest(".main-row");
+        if (clickedRow) {
+          const index = clickedRow.dataset.index;
+          const detailsRow = document.querySelector(`.details-row[data-index="${index}"]`);
+          const allDetailsRows = document.querySelectorAll(".details-row");
+
+          allDetailsRows.forEach(row => {
+            if (row !== detailsRow) {
+              row.style.display = "none";
+            }
+          });
+
+          if (detailsRow) {
+            detailsRow.style.display = detailsRow.style.display === "none" ? "table-row" : "none";
+          }
+        }
+      });
     }
   })
   .catch((error) => {

@@ -304,6 +304,29 @@ body.dark-mode #popup .close-button:hover {
   transform: scale(1.2);
 }
 
+.dark-mode .details-row {
+  background-color: #333;
+  color: #f9f9f9;
+  border-top: 1px solid #555;
+}
+
+.dark-mode .details-row .timeline-event::before {
+  background-color: #000000;
+  border: 6px solid #ffffff;
+}
+
+.dark-mode .details-row .timeline-event::after {
+  background-color: #ffffff;
+}
+
+.dark-mode .details-row .timeline-event .event-date {
+  color: #bbb;
+}
+
+.dark-mode .details-row .timeline-event .event-description {
+  color: #f9f9f9;
+}
+
 /* ===========================
    Responsive Design
 =========================== */
@@ -363,4 +386,73 @@ body.dark-mode #popup .close-button:hover {
     top: 0.5rem;
     right: 0.5rem;
   }
+}
+
+
+/* ===========================
+   Details Row
+=========================== */
+.details-row {
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+  color: #333;
+  border-top: 1px solid #ddd;
+  text-align: left;
+}
+
+.details-row td {
+  padding: 10px;
+}
+
+.details-row .timeline {
+  margin: 10px 0;
+  padding: 0;
+  border-left: 2px solid transparent;
+  position: relative;
+}
+
+.details-row .timeline-event {
+  position: relative;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.details-row .timeline-event::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border: 6px solid #000000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.details-row .timeline-event::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 12px;
+  width: 22px;
+  height: 120%;
+  background-color: #000000;
+  z-index: 0;
+}
+
+.details-row .timeline-event:last-child::after {
+  display: none;
+}
+
+.details-row .timeline-event .event-date {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.details-row .timeline-event .event-description {
+  font-size: 0.9rem;
+  color: #000000;
+  line-height: 1.4;
 }

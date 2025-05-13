@@ -18,7 +18,7 @@ function fetchPublicTransportDataByRegionId(id) {
               <td>${item.data_foramt || "Brak danych"}</td>
               <td>${item.url_to_data ? `<a href="${item.url_to_data}" target="_blank">Link</a>` : "Brak danych"}</td>
               <td>${item.file ? `<a href="${item.file}" target="_blank">Pobierz plik</a>` : "Brak pliku"}</td>
-              <td>${new Date(item.uploaded_at).toLocaleString() || "Brak danych"}</td>
+              <td>${item.uploaded_at ? `${String(new Date(item.uploaded_at).getDate()).padStart(2, '0')}.${String(new Date(item.uploaded_at).getMonth() + 1).padStart(2, '0')}.${new Date(item.uploaded_at).getFullYear()}` : "Brak danych"}</td>
             </tr>
           `;
         });
