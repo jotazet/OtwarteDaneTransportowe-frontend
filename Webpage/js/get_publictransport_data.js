@@ -8,8 +8,13 @@ function fetchPublicTransportDataByRegionId(id) {
     })
     .then((data) => {
       if (data.length > 0) {
-        let temp = "";
+        // Update provision-info
+        const provision = data[0].transport_organization.provision || "Brak";
+        const formattedProvision = provision.replace(/\r\n|\n/g, "<br>");
+        document.querySelector("#provision-info").innerHTML = formattedProvision;
 
+        // Update the table content
+        let temp = "";
         data.forEach((item) => {
           temp += `
             <tr>
@@ -23,14 +28,16 @@ function fetchPublicTransportDataByRegionId(id) {
           `;
         });
 
-        // Update only the tbody of the table
         document.querySelector("#public-transport-data-table tbody").innerHTML = temp;
       } else {
+        // Handle case when no data is available
+        document.querySelector("#provision-info").innerHTML = "Brak danych";
         document.querySelector("#public-transport-data-table tbody").innerHTML = "<tr><td colspan='6'>Brak dostępnych danych</td></tr>";
       }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
-      document.querySelector("#public-transport-data-table tbody").innerHTML = "<tr><td colspan='6'>Brak danych</td></tr>";
+      document.querySelector("#provision-info").innerHTML = "Błąd ładowania danych";
+      document.querySelector("#public-transport-data-table tbody").innerHTML = "<tr><td colspan='6'>Błąd ładowania danych</td></tr>";
     });
 }

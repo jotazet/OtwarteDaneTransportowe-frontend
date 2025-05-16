@@ -62,15 +62,19 @@ fetch("https://api.odt.org.pl/publictransport/feed-status/")
 
 // Function to show popup
 function showPopup(id) {
-    // Show the popup
-    const popup = document.getElementById("popup");
-    popup.style.display = "block";
-  
-    // Fetch and display data in the popup
-    fetchPublicTransportDataByRegionId(id);
-  
-    // Add event listener to close the popup
-    document.getElementById("close-popup").addEventListener("click", () => {
-      popup.style.display = "none";
-    });
-  }
+  // Show the popup
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
+
+  // Fetch provision and table data using fetchPublicTransportDataByRegionId
+  fetchPublicTransportDataByRegionId(id);
+
+  // Add event listener to close the popup
+  document.getElementById("close-popup").addEventListener("click", () => {
+    popup.style.display = "none";
+
+    // Clear the provision-info and table content when closing the popup
+    document.querySelector("#provision-info").innerHTML = "<i>Brak</i>";
+    document.querySelector("#public-transport-data-table tbody").innerHTML = "";
+  });
+}

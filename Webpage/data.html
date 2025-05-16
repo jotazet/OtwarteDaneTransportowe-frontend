@@ -64,23 +64,25 @@
 
     <!-- Popup container -->
     <div id="popup" class="popup">
-        <h3>Dane do pobrania</h3>
-        <table id="public-transport-data-table" class="data-table">
+      <h3>Dane do pobrania</h3>
+      <p><strong>Klauzula dostawcy:</strong></p>
+      <p id="provision-info"><i>Brak</i></p>
+      <table id="public-transport-data-table" class="data-table">
         <thead>
-            <tr>
+          <tr>
             <th>Region</th>
             <th>Organizator transportu</th>
             <th>Format danych</th>
             <th>Link do danych</th>
             <th>Plik</th>
             <th>Data dodania</th>
-            </tr>
+          </tr>
         </thead>
         <tbody>
-            <!-- Rows will be dynamically added here -->
+          <!-- Rows will be dynamically added here -->
         </tbody>
-        </table>
-        <button id="close-popup" class="close-button" aria-label="Close">&times;</button>
+      </table>
+      <button id="close-popup" class="close-button" aria-label="Close">&times;</button>
     </div>
 
     <footer class="main-footer">
